@@ -1,10 +1,2 @@
-import { Router } from 'express';
-
-import { home } from './routes';
-
-export default () => {
-    const app = Router();
-    home(app);
-
-    return app;
-};
+export { default as home } from './routes/home';
+export { default as users } from './routes/users';

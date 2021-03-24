@@ -1,11 +1,9 @@
-import { Router, Request, Response } from 'express';
+import express from 'express';
 
-const route = Router();
+const router = express.Router();
 
-export default (app: Router) => {
-    app.use('/', route);
+router.get('/', async (_req, res) => {
+  res.send('Server Live');
+});
 
-    route.get('/', (_req: Request, res: Response) => {
-        return res.send('User Service').status(200);
-    });
-};
+export default router;

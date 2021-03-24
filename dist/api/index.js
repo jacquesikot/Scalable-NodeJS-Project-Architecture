@@ -1,10 +1,11 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const express_1 = require("express");
-const routes_1 = require("./routes");
-exports.default = () => {
-    const app = express_1.Router();
-    routes_1.home(app);
-    return app;
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
 };
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.users = exports.home = void 0;
+var home_1 = require("./routes/home");
+Object.defineProperty(exports, "home", { enumerable: true, get: function () { return __importDefault(home_1).default; } });
+var users_1 = require("./routes/users");
+Object.defineProperty(exports, "users", { enumerable: true, get: function () { return __importDefault(users_1).default; } });
 //# sourceMappingURL=index.js.map
