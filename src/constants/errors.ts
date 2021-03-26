@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 const errorMessage = {
   noDatabaseConnection: 'Could not connect to the database',
   internalServerError: 'Oops, something went wrong. Internal Server Error',

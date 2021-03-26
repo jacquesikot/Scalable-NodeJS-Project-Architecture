@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 require('express-async-errors');
 import express from 'express';
 import cors from 'cors';

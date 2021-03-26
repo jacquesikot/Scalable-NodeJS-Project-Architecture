@@ -12,10 +12,7 @@ const userService = ({ prisma, logger }: IUserService) => {
     }
   };
 
-  const validatePassword = async (
-    givenPassword: string,
-    userPassword: string
-  ) => {
+  const validatePassword = async (givenPassword: string, userPassword: string) => {
     try {
       const validPassword = await bcrypt.compare(givenPassword, userPassword);
       if (!validPassword) return false;
@@ -26,20 +23,10 @@ const userService = ({ prisma, logger }: IUserService) => {
   };
 
   const createUser = async (user: IUser) => {
-    const {
-      first_name,
-      last_name,
-      phone_number,
-      email,
-      gender,
-      bvn,
-      user_type,
-      password,
-      pin,
-    } = user;
+    const { first_name, last_name, phone_number, email, gender, bvn, user_type, password, pin } = user;
 
-    const safePassword = (await hashValue(password))!.toString();
-    const safePin = (await hashValue(pin))!.toString();
+    const safePassword = (await hashValue(password))?.toString();
+    const safePin = (await hashValue(pin))?.toString();
 
     try {
       const user = prisma.users.create({
